@@ -4,82 +4,89 @@ const STORAGE_KEY = "gdg-callao-dino-quest-2026-charlas-v2";
 
 const sessions = [
   {
-    start: "09:20",
+    start: "09:00",
     end: "10:20",
+    title: "Inicio del DevFest Callao 2026",
+    speaker: "Equipo organizador",
+    category: "Apertura",
+  },
+  {
+    start: "10:20",
+    end: "11:00",
     title:
       "Más allá de los interceptores: las fronteras de confianza de Angular HTTP",
     speaker: "Jaime Burgos",
     category: "Web",
   },
   {
-    start: "10:20",
-    end: "11:00",
+    start: "11:00",
+    end: "11:40",
     title:
       "From Chatbot to Mentor: Building a Local Socratic Tutor with Gemma 4",
     speaker: "Lesly Zerna",
     category: "IA",
   },
   {
-    start: "11:00",
-    end: "11:40",
+    start: "11:40",
+    end: "12:40",
     title:
       "Fine-Tuning Gemma for Fact Retrieval: A MeMo-Based Approach to Next-Gen RAG",
     speaker: "Pedro Lara",
     category: "IA",
   },
   {
-    start: "11:40",
-    end: "12:20",
-    title: "¿Y si tu interfaz fuera un juego? CSS y JavaScript en acción",
-    speaker: "Shirley",
-    category: "Web",
-  },
-  {
-    start: "12:20",
-    end: "13:00",
+    start: "12:40",
+    end: "13:20",
     title:
       "Más Allá del Prompt: Harness Engineering para Angular en la Era de los Agentes",
     speaker: "Ricardo Chavarría",
     category: "Web",
   },
   {
-    start: "13:10",
-    end: "14:40",
-    title: "Almuerzo (90 min)",
+    start: "13:30",
+    end: "14:20",
+    title: "Almuerzo (60 min)",
     speaker: "Receso general",
     category: "Receso",
   },
   {
-    start: "14:40",
-    end: "15:20",
+    start: "14:30",
+    end: "15:00",
+    title: "¿Y si tu interfaz fuera un juego? CSS y JavaScript en acción",
+    speaker: "Shirley Ramos Martínez",
+    category: "Web UI & diseño",
+  },
+
+  {
+    start: "15:00",
+    end: "15:40",
     title: "Potencia tu proceso de creación de diseños con Canva IA",
-    speaker: "Candy & Dul",
+    speaker: "Candy Risco & Dul Ramírez",
     category: "Diseño",
   },
   {
-    start: "15:20",
-    end: "16:00",
+    start: "15:40",
+    end: "16:20",
     title: "Ingeniería de Flutter en la era de la IA",
     speaker: "Lesly Samaritano",
     category: "Mobile",
   },
   {
-    start: "16:00",
-    end: "16:40",
+    start: "16:20",
+    end: "17:00",
     title: "Cómo construir Agentes Inteligentes con Google Cloud",
-    speaker: "Nicolas Lecaros",
+    speaker: "Nicolás Lecaros",
     category: "Cloud",
   },
   {
-    start: "16:40",
-    end: "17:20",
+    start: "17:00",
+    end: "17:40",
     title:
-      "Deterministic Artifact Driven Architecture como crear código en workflows agenticos",
+      "Deterministic Artifact Driven Architecture: cómo crear código en workflows agénticos",
     speaker: "Henry Medina",
     category: "Arquitectura",
   },
 ];
-
 const $ = (id) => document.getElementById(id);
 const runner = $("runner");
 const scene = $("scene");
@@ -166,7 +173,7 @@ function getPositionPercent(index, complete) {
   return 4.5 + ((index + 1) / sessions.length) * 78;
 }
 
-// Checkpoints decorativos independientes del fondo exportado.
+// checkpoints decorativos
 const checkpointData = [
   { x: 14, label: "WEB", at: 0 },
   { x: 29, label: "IA", at: 2 },
