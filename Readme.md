@@ -1,6 +1,6 @@
-# DevFest Callao 2026 — Dino agenda
+# DevFest Callao 2026 - Dino agenda 🦖🚀✨
 
-Agenda interactiva para tu charla «¿Y si tu interfaz fuera un juego? CSS y JavaScript en acción».
+Agenda interactiva de mi charla «¿Y si tu interfaz fuera un juego? CSS y JavaScript en acción». 👩🏽‍💻
 
 ## Importante para la operación del evento
 
@@ -35,7 +35,3 @@ DevFest-Callao-Agenda-Interactiva/
     ├── dino-devfest.png
     └── fondo-agenda.png
 ```
-
-## Si vas a presentar durante 25 minutos
-
-Presenta la demo en **Manual / En vivo**: botón siguiente, salto y metas. Explica el arreglo `sessions`, cómo JS controla estados y `@keyframes` + `transition` en CSS. Usa la versión `demo-completa.html` en pantalla completa si quieres evitar problemas de rutas.
