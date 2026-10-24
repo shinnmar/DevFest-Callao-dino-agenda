@@ -44,7 +44,7 @@ const sessions = [
   },
   {
     start: "13:30",
-    end: "14:20",
+    end: "14:30",
     title: "Almuerzo (60 min)",
     speaker: "Receso general",
     category: "Receso",
@@ -150,6 +150,13 @@ function getLimaNow() {
 function minutes(hhmm) {
   const [h, m] = hhmm.split(":").map(Number);
   return h * 60 + m;
+}
+function isSessionInProgress(session, lima) {
+  return (
+    lima.date === EVENT_DATE &&
+    lima.time >= minutes(session.start) &&
+    lima.time < minutes(session.end)
+  );
 }
 function getAutomaticPosition(lima) {
   if (lima.date < EVENT_DATE) return { index: -1, complete: false };
