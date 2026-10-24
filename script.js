@@ -44,49 +44,50 @@ const sessions = [
   },
   {
     start: "13:30",
-    end: "14:30",
+    end: "14:45",
     title: "Almuerzo (60 min)",
     speaker: "Receso general",
     category: "Receso",
   },
   {
-    start: "14:30",
-    end: "15:00",
+    start: "14:45",
+    end: "15:15",
     title: "¿Y si tu interfaz fuera un juego? CSS y JavaScript en acción",
     speaker: "Shirley Ramos Martínez",
     category: "Web UI & diseño",
   },
 
   {
-    start: "15:00",
-    end: "15:40",
+    start: "15:15",
+    end: "15:55",
     title: "Potencia tu proceso de creación de diseños con Canva IA",
     speaker: "Candy Risco & Dul Ramírez",
     category: "Diseño",
   },
   {
-    start: "15:40",
-    end: "16:20",
+    start: "15:55",
+    end: "16:35",
     title: "Ingeniería de Flutter en la era de la IA",
     speaker: "Lesly Samaritano",
     category: "Mobile",
   },
   {
-    start: "16:20",
-    end: "17:00",
+    start: "16:35",
+    end: "17:15",
     title: "Cómo construir Agentes Inteligentes con Google Cloud",
     speaker: "Nicolás Lecaros",
     category: "Cloud",
   },
   {
-    start: "17:00",
-    end: "17:40",
+    start: "17:15",
+    end: "17:55",
     title:
       "Deterministic Artifact Driven Architecture: cómo crear código en workflows agénticos",
     speaker: "Henry Medina",
     category: "Arquitectura",
   },
 ];
+
 const $ = (id) => document.getElementById(id);
 const runner = $("runner");
 const scene = $("scene");
