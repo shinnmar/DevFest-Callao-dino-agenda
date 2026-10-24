@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#67c4ef">
+  <meta name="description" content="Agenda interactiva del DevFest Callao 2026: ¡el dino acompaña cada charla!">
+  <title>DevFest Callao 2026 | Dino agenda 🚀</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+    rel="stylesheet">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="identity">
+      <img src="assets/logo_devfest.png" alt="DevFest Callao 2026" class="header-logo" />
+      </div>
+      <div class="header-right"><span class="pill pill-white">24 oct 2026</span></div>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div><span class="eyebrow">Spoiler alert: demo de una talk 👩🏽‍💻</span>
+          <h1>Revisa nuestra Dino agenda! 🦖</em></h1>
+          <!--<h1>¿Y si tu agenda <em>fuera un juego?</em></h1>-->
+          <p>Recorre las charlas del DevFest con nuestro dino. Toca la pantalla para saltar y llega a la meta.</p>
+        </div>
+        <div class="scoreboard">
+          <div><span>ETAPA ACTUAL</span><strong id="scoreStage">0 <small>/ 10</small></strong></div>
+          <div><span>AVANCE</span><strong id="scorePercent">0%</strong></div>
+        </div>
+      </div>
+
+      <section class="game-frame" aria-labelledby="mapHeading">
+        <div class="game-topbar">
+          <div><span class="tiny-label">LEVEL 01 / DEVFEST CALLAO</span>
+            <h2 id="mapHeading">El camino de las charlitas de hoy <span>★</span></h2>
+          </div>
+          <div class="game-topbar-actions"><span class="clock" id="peruClock">LIMA · --:--</span><span
+              class="status-pill" id="modeChip">◷ HORARIO AUTOMÁTICO</span></div>
+        </div>
+        <div id="scene" class="scene" tabindex="0" role="button"
+          aria-label="Escenario interactivo: toca o haz clic para saltar. Doble toque para un salto más alto; con el teclado, usa la barra espaciadora.">
+
+          <div class="scene-note">TOCA O HAZ CLIC PARA SALTAR ↑</div>
+          <div class="scene-markers" id="sceneMarkers" aria-hidden="true"></div>
+          <div id="runner" class="runner" aria-hidden="true">
+            <div id="dinoSprite" class="dino-sprite"><img src="assets/dino-devfest.png" alt="" draggable="false"></div>
+            <div class="dino-shadow"></div>
+          </div>
+          <div id="goal" class="goal" aria-hidden="true"><span
+              class="goal-star">✦</span><strong>DEV<br>FEST</strong><small>META</small></div>
+          <div id="victory" class="victory" hidden><span>✦ ★ ✦</span><strong>¡META ALCANZADA!</strong><small>DEVFEST
+              CALLAO 2026</small></div>
+        </div>
+        <div class="progress-area">
+          <div class="progress-captions"><span>PROGRESO DEL EVENTO</span><strong id="progressText">0 / 10
+              etapas</strong></div>
+          <div class="progress-track" id="progressTrack" role="progressbar" aria-label="Progreso de la agenda"
+            aria-valuemin="0" aria-valuemax="10" aria-valuenow="0">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+          <div class="tips"><span>👆 1 toque: salto</span><span>⚡ 2 toques: supersalto</span><span>⌨ Espacio:
+              salto</span></div>
+        </div>
+      </section>
+
+      <section class="control-panel" aria-labelledby="controlsHeading">
+        <div class="control-description">
+          <h2 id="controlsHeading">Centro de control</h2>
+          <p id="modeHelp">Modo automático: sigue las horas previstas. Cambia a manual si una charla se atrasa.</p>
+        </div>
+        <div class="mode-switch" role="group" aria-label="Modo de seguimiento"><button type="button" id="manualMode"
+            class="mode-button" aria-pressed="false">● Manual / En vivo</button><button type="button" id="autoMode"
+            class="mode-button selected" aria-pressed="true">◷ Automático / Horario</button></div>
+        <div class="primary-actions"><button type="button" id="previousBtn" class="btn btn-light">←
+            Anterior</button><button type="button" id="nextBtn" class="btn btn-blue">▶ Iniciar siguiente
+            etapa</button><button type="button" id="finishBtn" class="btn btn-outline">★ Finalizar
+            recorrido</button><button type="button" id="resetBtn" class="btn btn-plain">↻ Reiniciar demo</button></div>
+        <p class="mode-info" id="syncInfo" aria-live="polite">El modo automático sigue las horas programadas; para
+          confirmar inicios reales usa el modo manual.</p>
+      </section>
+
+      <section class="content-grid">
+        <div class="current-column">
+          <article class="now-card" aria-live="polite"><span class="now-kicker" id="activeStatus">PRIMER
+              CHECKPOINT</span>
+            <h2 id="activeTitle">¡Bienvenidos al DevFest!</h2>
+            <p id="activeSpeaker">El juego comienza con la primera charla a las 09:20.</p>
+            <div class="now-footer"><span id="activeTime">09:20 – 10:20</span><span id="activeCategory"
+                class="category">WEB</span></div>
+          </article>
+          <article class="up-next"><span>SIGUIENTE PARADA →</span><strong id="nextTitle">Más allá de los interceptores:
+              las fronteras de confianza de Angular HTTP</strong><small id="nextTime">09:20 – 10:20</small></article>
+          <div class="small-note"><strong>¿Cómo confirmar el inicio real?</strong>
+            <p>Quien opere la agenda activa el modo manual y pulsa <b>«Iniciar siguiente etapa»</b> cuando el speaker
+              empiece realmente. En automático solo se siguen las horas programadas: no hay detección real del
+              escenario.</p>
+          </div>
+        </div>
+        <section class="agenda" aria-labelledby="agendaHeading">
+          <div class="agenda-heading">
+            <div><span class="tiny-label">SELECCIONA UNA CHARLA PARA CONFIRMAR SU INICIO</span>
+              <h2 id="agendaHeading">Mapa de misiones</h2>
+            </div><span id="agendaTotal" class="agenda-total">10 ETAPAS</span>
+          </div>
+          <div class="agenda-list" id="agendaList"></div>
+        </section>
+      </section>
+      <footer class="footer"><span>
+          Made with 💜 by
+          <a href="https://github.com/shinnmar" target="_blank" rel="noopener noreferrer">
+            shinnmar
+          </a>
+        </span><span>Una experiencia hecha con HTML, CSS y JavaScript, sin
+          frameworks.</span></footer>
+    </main>
+  </div>
+</body>
+
+</html>
